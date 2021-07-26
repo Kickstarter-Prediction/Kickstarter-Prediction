@@ -13,6 +13,8 @@ uvicorn = "*"
 scikit-learn = "*"
 numpy = "*"
 notebook = "*"
+joblib = "*"
+category-encoders = "*"
 
 [dev-packages]
 
