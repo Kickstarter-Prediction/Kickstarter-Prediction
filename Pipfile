@@ -6,8 +6,6 @@ name = "pypi"
 [packages]
 pandas = "*"
 fastapi = "*"
-sqlalchemy = "*"
-psycopg2-binary = "*"
 spacy = "*"
 uvicorn = "*"
 scikit-learn = "*"
