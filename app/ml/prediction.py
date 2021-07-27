@@ -1,4 +1,4 @@
-"""Machine learning functions / price recommendation tool"""
+"""Machine learning functions / success prediction tool"""
 
 # Import packages
 import pickle
