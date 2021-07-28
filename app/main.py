@@ -28,7 +28,7 @@ templates = Jinja2Templates(directory="app/templates/")
 @app.get('/', response_class=HTMLResponse)
 def display_index(request: Request):
     """Displays index.html from templates when user loads root URL"""
-    return templates.TemplateResponse('index.html', {"request": request})
+    return templates.TemplateResponse('prediction.html', {"request": request})
 
 
 # Route for about page
