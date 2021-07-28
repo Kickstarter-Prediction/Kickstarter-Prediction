@@ -2,11 +2,12 @@
 
 # Import packages
 import pickle
+import joblib
 from fastapi import APIRouter, Request, Form
 from fastapi.templating import Jinja2Templates 
 import pandas as pd
 import numpy as np
-
+from xgboost import XGBClassifier 
 
 # Instatiate the router
 router = APIRouter()
@@ -15,6 +16,4 @@ router = APIRouter()
 templates = Jinja2Templates(directory="app/templates/")
 
 
-infile = open(model_xgb2.plk, 'rb')
-model = pickle.load(infile)
-infile.close()
+model = joblib.load('app/ml/model_xgb2.pkl')

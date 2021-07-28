@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Kickstarter Success Prediction</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+        <!-- Wrapper -->
+			<div id="wrapper">
+
+                <!-- Header -->
+					<header id="header">
+						<a href="/" class="logo"><strong>Kickstarter</strong> <span>Will Your Kickstarter Succeed</span></a>
+						<nav>
+                            <ul class="actions">
+								<li><a href="/prediction" class="button">Prediction</a></li>
+								<li><a href="/about" class="button">About</a></li>
+                                <li></li>
+							</ul>
+                            
+						</nav>
+					</header>
+                
+                <!-- Main -->
+					<div id="main" class="alt">
+                        <section id="one">
+                            <div class="inner">
+
+                                <div class="row gtr-200">
+                                    <div class="col-6 col-12-medium"> 
+                                        <form action="/prediction" method="POST">                                                                
+                                            <div class="row gtr-uniform">
+                                                <div class="col-12">
+                                                    <label for="message">main_category</label>
+                                                    <select name="main_category" id="main_category">
+                                                        <!-- <option value="">- City by name -</option> -->
+                                                        <option value="Publishing">Publishing</option>
+                                                        <option value="Film & Video">Film & Video</option>
+                                                        <option value="Music">Music</option>
+                                                        <option value="Food">Food</option>
+                                                        <option value="Crafts">Crafts</option>
+                                                        <option value="Games">Games</option>
+                                                        <option value="Design">Design</option>
+                                                        <option value="Comics">Comics</option>
+                                                        <option value="Fashion">Fashion</option>
+                                                        <option value="Theater">Theater</option>
+                                                        <option value="Art">Art</option>
+                                                        <option value="Photography">Photography</option>
+                                                        <option value="Technology">Technology</option>
+                                                        <option value="Dance">Dance</option>
+                                                        <option value="Journalism">Journalism</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-6 col-12-xsmall">
+                                                    <label for="message">Goal</label>
+                                                    <div class="slidecontainer">
+                                                        <input type="range" min="0" max="100000000" value="1000" class="slider" name="goal" id="goal">
+                                                        <p>Goal Amount: <span id="display1"></span></p>
+                                                      </div>
+                                                </div>
+                                                <div class="col-6 col-12-xsmall">
+                                                    <label for="message">Duration of Days</label>
+                                                    <div class="slidecontainer">
+                                                        <input type="range" min="0" max="91" value="1" class="slider" name="duration_days" id="duration_days">
+                                                        <p>Days: <span id="display2"></span></p>
+                                                      </div>
+                                                </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="message">Currency type</label>
+                                                    <select name="currency" id="currency">
+                                                        <!-- <option value="">- Property Type -</option> -->
+                                                        <option value="GBP">GBP</option>
+                                                        <option value="USD">USD</option>
+                                                        <option value="CAD">CAD</option>
+                                                        <option value="AUD">AUD</option>
+                                                        <option value="NOK">NOK</option>
+                                                        <option value="EUR">EUR</option>
+                                                        <option value="MXN">MXN</option>
+                                                        <option value="SEK">SEK</option>
+                                                        <option value="NZD">NZD</option>
+                                                        <option value="CHF">CHF</option>
+                                                        <option value="DKK">DKK</option>
+                                                        <option value="HKD">HKD</option>
+                                                        <option value="SGD">SGD</option>   
+                                                        <option value="JPY">JPY</option>                                               
+                                                    </select>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="message">Country</label>
+                                                    <select name="country" id="country">
+                                                        <!-- <option value="">- Room type -</option> -->
+                                                        <option value="GB">GB</option>  
+                                                        <option value="US">US</option>  
+                                                        <option value="CA">CA</option>  
+                                                        <option value="AU">AU</option>  
+                                                        <option value="NO">NO</option>  
+                                                        <option value="IT">IT</option>  
+                                                        <option value="DE">DE</option>  
+                                                        <option value="IE">IE</option>  
+                                                        <option value="MX">MX</option>  
+                                                        <option value="ES">ES</option>  
+                                                        <option value="SE">SE</option>  
+                                                        <option value="FR">FR</option>  
+                                                        <option value="NZ">NZ</option>  
+                                                        <option value="CH">CH</option>  
+                                                        <option value="AT">AT</option>  
+                                                        <option value="BE">BE</option>  
+                                                        <option value="DK">DK</option>  
+                                                        <option value="HK">HK</option>  
+                                                        <option value="NL">NL</option>
+                                                        <option value="LU">LU</option>  
+                                                        <option value="SG">SG</option>  
+                                                        <option value="N,0">N,0</option>  
+                                                        <option value="JP">JP</option>  
+                                                    </select>
+                                                </div>
+                                                <div class="col-12">
+                                                    <ul class="actions">
+                                                        <li><input type="submit" value="Predict Success" class="primary" /></li>
+                                                    </ul>
+                                                </div>
+                                            </div> 
+
+                                        </form>
+                                    </div>
+                                    <div class="col-6 col-12-medium">
+                                        <h3>YOUR RECOMMENDED LISTING PRICE</h3>
+                                        <h2>{{ prediction }}</h2>
+                                        <h4>{{ main_category }}</h4>
+                                        <h4>{{ goal }}</h4>
+                                        <h4>{{ duration_days }}</h4>
+                                        <h4>{{ currency }}</h4>
+                                        <h4>{{ country }}</h4>
+                                    </div>
+                                </div>
+     
+                            </div>  
+                        </section>     
+                    </div>       
+                <!-- Footer -->
+                    <footer id="footer">
+                        <div class="inner">
+                            <ul class="icons">
+                                <li><a href="https://github.com/Kickstarter-Prediction/Kickstarter-Prediction" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                            </ul>
+                            <ul class="copyright">
+                                <li>&copy; Ft-Kickstarter-27 July 2021</li><li>Developed by: Gabe Nosek & Ivan Mihailov</li>
+                            </ul>
+                        </div>
+                    </footer>     
+            </div>
+        <!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+            <script src="assets/js/slider.js"></script>
+
+    </body>
