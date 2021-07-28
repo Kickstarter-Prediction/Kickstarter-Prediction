@@ -9,7 +9,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
 # For connecting route to ml
-from app.ml import ml
+from app.ml import prediction
 
 
 # Instantiate fastAPI with appropriate descriptors
