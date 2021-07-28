@@ -15,6 +15,8 @@ joblib = "*"
 category-encoders = "*"
 xgboost = "*"
 seaborn = "*"
+aiofiles = "*"
+python-multipart = "*"
 
 [dev-packages]
 

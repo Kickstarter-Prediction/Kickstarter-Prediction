@@ -7,9 +7,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-
+from typing import Optional
 # For connecting route to ml
-from app.ml import prediction
+from ml import prediction
 
 
 # Instantiate fastAPI with appropriate descriptors
@@ -28,13 +28,18 @@ templates = Jinja2Templates(directory="app/templates")
 @app.get('/', response_class=HTMLResponse)
 def display_index(request: Request):
     """Displays index.html from templates when user loads root URL"""
-    return templates.TemplateResponse('prediction.html', {"request": request})
+    return templates.TemplateResponse('index.html', {"request": request})
 
 
 # Route for about page
 @app.get('/about')
 def display_about(request: Request):
     return templates.TemplateResponse('about.html', {"request": request})
+
+
+@app.get('/prediction')
+def display_about(request: Request):
+    return templates.TemplateResponse('prediction.html', {"request": request})
 
 
 # Mounts static files to specific routes for easier reference
