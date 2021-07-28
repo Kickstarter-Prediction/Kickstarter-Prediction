@@ -21,7 +21,7 @@ app = FastAPI(
 )
 
 # Instantiate templates path
-templates = Jinja2Templates(directory="app/templates/")
+templates = Jinja2Templates(directory="app/templates")
 
 
 # Route for laning page
@@ -58,7 +58,7 @@ app.mount("/images",
 
 # Connect to the routing utilized in the other files of the app
 # predictive model
-#app.include_router(ml.router, tags=['Machine Learning'])
+app.include_router(prediction.router, tags=['Machine Learning'])
 
 
 # Allow access between the front end and back end from different origins
