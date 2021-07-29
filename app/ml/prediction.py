@@ -49,7 +49,7 @@ def predict(currency,
     # Revert prediction logarithmic values and round for cents
     result = (y_pred)
 
-    #return f"${result} per night"
+    
     if y_pred == 1:
         return f'Congratulations! Your Kickstarter Campaign Was \
             Successfuly Funded!'
