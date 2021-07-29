@@ -16,7 +16,7 @@ router = APIRouter()
 templates = Jinja2Templates(directory="app/templates/")
 
 
-model = joblib.load('app/ml/model_xgb2.pkl')
+model = joblib.load('app/ml/model_xgb22.pkl')
 
 
 # Setup the prediction process (how the data will be passed to the model)
@@ -24,38 +24,42 @@ def predict(main_category,
             currency,
             goal,
             country,
-            duration_days
+            duration_days,
+            category
             ):
-    """Predict the best value for the Airbnb host's property based on
-    specific features found in historical data.
-    Parameters are the selected features of most importance (based on
-    EDA and model testing).
-    Returns a result in dollar amount.
-    """
+    
 
     # Pass the arguments into a dataframe to be passed into predictive model
     df = pd.DataFrame(columns=["main_category",
                                "currency",
                                "goal",
                                "country",
-                               "duration_days"
+                               "duration_days",
+                               "category"
                                ],
                       data=[[main_category,
                              currency,
                              goal,
                              country,
                              duration_days,
+                             category
                              ]]
                       )
 
     # Generate a prediction based on the information in the dataframe
-    y_pred = model.predict(df)[0][0]
+    y_pred = model.predict(df)[0]
 
     # Revert prediction logarithmic values and round for cents
     result = (y_pred)
 
     return f"${result} per night"
-
+    # if y_pred == 1:
+    #    return f'Congratulations! Your Kickstarter Campaign Was \
+    #        Successfuly Funded!'
+    #else:
+    #    return f'We Are Sorry But Your Kickstarter Campaign Was Not \
+    #        Successfuly Funded! Please revise your inputs and try again!'
+    
 
 # Route the inputs from the HTML form into the predictive model
 @router.post('/prediction')
@@ -65,7 +69,8 @@ def echo(
     currency: str=Form(...),
     goal: int=Form(...),
     country: str=Form(...),
-    duration_days: int=Form(...)
+    duration_days: int=Form(...),
+    category: str=Form(...)
         ):
     """Gets the input data from predict.html (with respective dtypes
     included) and passes them into the predict function (used as a
@@ -83,7 +88,8 @@ def echo(
                          currency,
                          goal,
                          country,
-                         duration_days
+                         duration_days,
+                         category
                          )
 
     return templates.TemplateResponse('prediction.html',
@@ -95,7 +101,9 @@ def echo(
                                        "goal":
                                        f'goal: {goal}',
                                        "country": f'country: {country}',
-                                       "duration_days": f'duration_days: {duration_days}'
+                                       "duration_days": f'duration_days: {duration_days}',
+                                       "category":
+                                       f'category: {category}',
                                        })
 
 

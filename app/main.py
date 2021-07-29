@@ -54,12 +54,6 @@ app.mount("/images",
           name="images"
           )
 
-# Predictive model
-#app.mount("/model.joblib",
-#          StaticFiles(directory="app/ml/"),
-#          name="model.joblib"
-#          )
-
 
 # Connect to the routing utilized in the other files of the app
 # predictive model
