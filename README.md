@@ -22,7 +22,7 @@ This web app is built on FastAPI and depolyed on Heroku. The app uses an XGBoost
     - Country: the location of the user's Kickstarter Campaign
     - Category: the specific category for the user's Kickstarter Campaign (e.g. 3D Printing, Bacon, Textiles, Theater, Webseries, etc.)
 ​
-    A prediction of an unsuccessful campaign invites the user to adjust their inputs to determine the optimal inputs that will allow them to run a Successful Kickstarter Campaign
+    A prediction of an unsuccessful campaign invites the user to adjust their inputs to determine the optimal inputs that will allow them to run a Successful Kickstarter Campaign.
 ​
 ## Contributors
 ​
